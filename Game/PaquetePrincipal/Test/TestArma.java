@@ -3,7 +3,7 @@
  */
 package Test;
 
-import Clases.Arma;
+import Clases.ArmaImpl;
 import Excepciones.ArmaException;
 /**
  * @author Ale
@@ -13,9 +13,9 @@ public class TestArma {
 	
 	public static void main(String[]args){
 		
-		Arma a=new Arma();
-		Arma a1=new Arma(3,"MP900",1.75,25,3);
-		Arma copiaA=new Arma(a);
+		ArmaImpl a=new ArmaImpl();
+		ArmaImpl a1=new ArmaImpl(3,"MP900",1.75,25,3);
+		ArmaImpl copiaA=new ArmaImpl(a);
 		System.out.println(a);
 		System.out.println(a1);
 		System.out.println(copiaA);

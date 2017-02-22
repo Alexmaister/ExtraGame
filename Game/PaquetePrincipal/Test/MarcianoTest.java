@@ -9,7 +9,7 @@ public class MarcianoTest {
 	public static void main(String[]args){
 		Marciano m=new Marciano();
 		Marciano mcopia=new Marciano(m);
-		Arma a=new Arma();
+		ArmaImpl a=new ArmaImpl();
 		Marciano ma=new Marciano(100,"Soldado","Pluton",a);
 		
 		System.out.println(m.toString());

@@ -1,5 +1,6 @@
 package Clases;
 import Excepciones.ArmaException;
+import Interfaces.Arma;
 /**
  * @author Ale
  *
@@ -18,8 +19,8 @@ import Excepciones.ArmaException;
 
 /*INTERFAZ:
  * 
- * String getTipo()
- * void setTipo(String t)
+ * int getTipo()
+ * void setTipo(int t)
  * String getNombre()
  * void setNombre(String n)
  * double getPeso()
@@ -29,7 +30,7 @@ import Excepciones.ArmaException;
  * int getAccesorio()
  * void setAccesorio(int a)
  * */
-public class Arma implements Cloneable,Comparable<Arma>{
+public class ArmaImpl implements Arma,Cloneable,Comparable<ArmaImpl>{
 	
 	private int tipo;
 	private String nombre;
@@ -38,7 +39,7 @@ public class Arma implements Cloneable,Comparable<Arma>{
 	private int accesorio;
 	
 	//constructor por defecto
-	public Arma(){
+	public ArmaImpl(){
 		
 		this.tipo=0;
 		this.nombre="P200";
@@ -47,7 +48,7 @@ public class Arma implements Cloneable,Comparable<Arma>{
 		this.accesorio=0;
 	}
 	//constructor por parametros
-	public Arma(int t, String n , double p, float m, int a){
+	public ArmaImpl(int t, String n , double p, float m, int a){
 		
 		
 		this.tipo=t;
@@ -58,7 +59,7 @@ public class Arma implements Cloneable,Comparable<Arma>{
 		
 	}
 	//constructor de copia
-	public Arma(Arma a){
+	public ArmaImpl(ArmaImpl a){
 		this.tipo=a.getTipo();
 		this.nombre=a.getNombre();
 		this.peso=a.getPeso();
@@ -101,18 +102,18 @@ public class Arma implements Cloneable,Comparable<Arma>{
 	}
 
 	@Override
-	public Arma clone(){
-		Arma clon=null;
+	public ArmaImpl clone(){
+		ArmaImpl clon=null;
 		
 		try{
-			clon=(Arma)super.clone();
+			clon=(ArmaImpl)super.clone();
 		}catch (CloneNotSupportedException exc){
 			System.out.print(exc);
 		}
 		return clon;
 	}
 	@Override
-	public int compareTo(Arma a){
+	public int compareTo(ArmaImpl a){
 		int comparacion;
 		if(this.municion==a.getMunicion())
 			comparacion=0;
@@ -126,7 +127,7 @@ public class Arma implements Cloneable,Comparable<Arma>{
 	@Override
 	public boolean equals(Object obj){
 		boolean resultado;
-		if (obj !=null && obj instanceof Arma)
+		if (obj !=null && obj instanceof ArmaImpl)
 			resultado=true;
 		else resultado=false;
 		return resultado;
@@ -139,4 +140,7 @@ public class Arma implements Cloneable,Comparable<Arma>{
 	public int hashCode(){
 		return this.getTipo()/this.nombre.hashCode()+(1/3)*1/this.accesorio;
 	}
+	
+		
+	
 }

@@ -42,7 +42,7 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	private int vida;
 	private String tipo;
 	private String planeta;
-	private Arma arma;
+	private ArmaImpl arma;
 	private double poder;
 	private int ataque;
 	private int defensa;
@@ -51,10 +51,10 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 		this.vida=100;
 		this.tipo="Soldado";
 		this.planeta="Venus";
-		this.arma=new Arma();	
+		this.arma=new ArmaImpl();	
 	}
 
-	public Marciano(int v,String t, String p, Arma a){
+	public Marciano(int v,String t, String p, ArmaImpl a){
 		
 		this.vida=v;
 		this.tipo=t;
@@ -79,7 +79,7 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	public String getPlaneta(){
 		return this.planeta;
 	}
-	public Arma getArma(){
+	public ArmaImpl getArma(){
 		return this.arma;
 	}
 	public double getPoder(){
@@ -98,7 +98,7 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	public void setPlaneta(String p){
 		this.planeta=p;
 	}
-	public void setArma(Arma a){
+	public void setArma(ArmaImpl a){
 
 			
 			this.arma.setNombre(a.getNombre());
