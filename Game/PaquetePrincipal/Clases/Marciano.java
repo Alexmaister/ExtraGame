@@ -10,9 +10,12 @@ import Excepciones.*;
  * propiedades basicas:
  * 	Vida:Consultable y modificable
  * 	Tipo:Consultable y modificable
- * 	Planeta:Consultable y m,odificable
+ * 	Planeta:Consultable y modificable
  * 	Arma:Consultable y modificable
- * 	Poder:Consultable
+ * 	Poder:Consultable y modificable
+ * 	Ataque:Consultable y modificable 
+ * 	Defensa:Consultable y modificable
+ * 	Nivel :Consultable y modificable
  */
 
 /*Interfaz
@@ -24,11 +27,15 @@ import Excepciones.*;
  * void setPlaneta(String p)
  * Arma getArma()
  * void setArma(Arma a)
- * void calcularPoder()
+ * void setPoder()
+ * int getAtaque()
+ * void setAtaque(int a)
+ * int getDefensa()
+ * void setDefensa(int d)
+ * int getNIvel()
+ * void setNivel(int n)
  * 
- * void restarVida(int v)
- * void modificarPoder(double apw)
- * double disparar()
+ * void disparar(Marciano m)
  */
 public class Marciano implements Cloneable,Comparable<Marciano>{
 	
@@ -37,6 +44,8 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	private String planeta;
 	private Arma arma;
 	private double poder;
+	private int ataque;
+	private int defensa;
 	
 	public Marciano(){
 		this.vida=100;
@@ -107,7 +116,7 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	public void setPoder(double p){
 		this.poder=p;
 	}
-
+	//////////////////////////////////////////////////////////////////////////////////
 	/*
 	  cabecera: public void restarVida(int v)
 	  descripcion: metodo que restara un numero entero a la vida de un marciano
@@ -115,12 +124,13 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	  salidas:ninguna
 	  precondiciones:ninguna
 	  postcondiciones: el objeto marciano tendra la vida menos el entero de entrada
-	 */
+	 
 	public void restarVida(int v)throws MarcianoException{
 		if(v<1)
 			throw new MarcianoException("No se puede decremetar esa cantidad");
 		else this.vida-=v;
-	}
+	}*/
+	///////////////////////////////////////////////////////////////////////////////
 	
 	/*
 	  cabecera:public void modificarPoder(double)
@@ -129,23 +139,33 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	  salidas:ninguna
 	  precondiciones:ninguna
 	  postcondiciones:el poder del marciano se modificara segun el numero introducido
-	 */
+
 	public void modificarPoder(double apw){
 		
 		this.poder+=apw;
-	}
+	}*/
+	////////////////////////////////////////////////////////////////////////////////
+	
 	
 	/*
-	 * cabecera:public double dispara()
-	 * descripcion: funcion que devolvera el daño que causa el marciano al disparar su arma
-	 * entradas:ninguna
-	 * salidas:un real
+	 * cabecera:public void dispara(Marciano m)
+	 * descripcion: procedimiento que modificara los datos del Marciano que se envia por parametros
+	 * entradas:-
+	 * salidas:-
+	 * entradas/salidas:un objeto de la clase marciano
 	 * precondiciones:ninguna
 	 * postcondiciones:ninguna
 	 * */
-	public double disparar(){
+	public void disparar(Marciano m){
 		
-		return 0.0;
+		try {
+			m.setVida(0);
+		} catch (MarcianoException mE) {
+			
+			System.out.println("Error vida menor que cero");
+		}
+		
+		
 	}
 	
 	@Override
