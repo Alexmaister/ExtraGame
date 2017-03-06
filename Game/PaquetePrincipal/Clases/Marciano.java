@@ -44,9 +44,9 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	private String planeta;
 	private ArmaImpl arma;
 	private double poder;
-	private int ataque;
-	private int defensa;
-	
+	private double ataque;
+	private double defensa;
+	private Armadura armadura;
 	public Marciano(){
 		this.vida=100;
 		this.tipo="Soldado";
@@ -85,6 +85,13 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 	public double getPoder(){
 		return this.poder;
 	}
+	public double getAtaque(){
+		return this.ataque;
+	}
+	public double getDefensa(){
+		return this.defensa;
+	}
+	
 	
 	public void setVida(int v)throws MarcianoException{
 		if(v<0)
@@ -115,6 +122,13 @@ public class Marciano implements Cloneable,Comparable<Marciano>{
 
 	public void setPoder(double p){
 		this.poder=p;
+	}
+	
+	public void setAtaque(double a){
+		this.ataque=a;
+	}
+	public void setDefensa(double d){
+		this.defensa=d;
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 	/*
